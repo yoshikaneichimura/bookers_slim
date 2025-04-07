@@ -1,2 +1,13 @@
-h1 Books#index
-p Find me in app/views/books/index.html.slim
+h1 Books
+
+h2 New Book
+
+= form_with model: @book, url: books_path, method: :post do |f|
+  div
+    label Title
+    = f. text_field :title 
+  div
+    label Body
+    = f.text_area :body
+  div
+    = f.submit 'Create book'
