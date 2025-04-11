@@ -1,11 +1,22 @@
 h1 Books
 
+table
+  thead
+    tr
+      th Title
+      th Body
+  tbody
+    - @books.each do |book|
+      tr
+        td  = book.title
+        td  = book.body
+
 h2 New Book
 
 = form_with model: @book, url: books_path, method: :post do |f|
   div
     label Title
-    = f. text_field :title 
+    = f. text_field :title
   div
     label Body
     = f.text_area :body
