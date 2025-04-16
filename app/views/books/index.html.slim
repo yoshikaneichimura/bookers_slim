@@ -10,6 +10,7 @@ table
       tr
         td  = book.title
         td  = book.body
+        td  = link_to "Show",book_path(book.id)
 
 h2 New Book
 
