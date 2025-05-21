@@ -1,13 +1,15 @@
 h1 Editing Book
-= form_with model: @book, url: book_path(@book.id),method: :patch  do |f|
-  div
-    label Title
-    = f. text_field :title
-  div
-    label Body
-    = f. text_area :body
-  div
-    = f.submit 'Update book'
 
-= link_to "Show", book_path(@book.id)
-= link_to "Back", books_path
+= form_with model: @book, url: book_path(@book.id),method: :patch  do |f|
+  div.field
+    label for="book_title" Title
+    = f. text_field :title
+  div.field
+    label for="book_body" Body
+    = f. text_area :body
+  div.actions
+    = f.submit 'Update book'
+div
+  = link_to "Show", book_path(@book.id)
+  | ｜
+  = link_to "Back", books_path
